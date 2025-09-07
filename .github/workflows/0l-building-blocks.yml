@@ -1,0 +1,19 @@
+name: 01-Bunding-Blocks
+
+on: [push]
+
+jobs:
+    echo-hello:
+        runs-on: ubuntuo-latest
+        steps:
+            - name: Echo Hello
+              run: echo "Hello, World!"
+    echo-goodbye:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Echo Goodbye
+              run: |
+                 echo "Goodbye, World!"
+                 exit 1
+            - name: This step will be skipped
+              run: echo "This will not run because the previous step failed."
